@@ -1,0 +1,142 @@
+/** @format */
+
+.menuItem {
+	color: #e9af00;
+	font-size: 1.2rem;
+	position: relative;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.menuItem::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #333;
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
+}
+
+.menuItem:hover::after {
+	transform: scaleX(1);
+}
+
+.container {
+	position: relative;
+}
+
+.toggleButton {
+	background-color: #958905;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 16px;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: absolute;
+	width: 77vh;
+	top: 100%;
+	left: 0;
+	z-index: 1;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.dropdownItem {
+	color: #333;
+	font-size: 1.2rem;
+	position: relative;
+}
+
+.dropdownItem::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #e7df4f;
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
+}
+
+.dropdownItem:hover::after {
+	transform: scaleX(1);
+}
+
+.scrollingDiv {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	top: 11vh;
+	background-color: #ffffff;
+	border: solid 1px #ece364;
+	padding: 1px 10px;
+	border-radius: 10px;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+	box-shadow: 0px -7px 22px 7px #e4e42a inset, 1px 1px 11px 1px #fbfbf9;
+}
+
+.show {
+	opacity: 1;
+	transform: translateX(0.6%) translateY(103%);
+}
+
+.hide {
+	opacity: 0;
+	transform: translateX(-110%) translateY(123%);
+}
+
+.header {
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	box-shadow: 1px 1px 7px 1px #b8b81a inset, 1px 1px 3px 1px #e9e912;
+	background-image: linear-gradient(
+		to right,
+		#ede352 0%,
+		#ede749 44%,
+		#ece364 50%,
+		#eee364 100%
+	);
+}
+
+.logo {
+	height: 40px;
+	margin-right: 10px;
+}
+
+.searchContainer {
+	display: flex;
+	align-items: center;
+}
+
+.searchInput {
+	padding: 5px;
+	margin-right: 10px;
+	border: none;
+	border-radius: 5px;
+}
+
+.searchButton {
+	margin-left: 44vh;
+	padding: 5px;
+	background-color: #b09907;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}

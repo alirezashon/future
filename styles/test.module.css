@@ -1,0 +1,14 @@
+
+
+
+
+
+.myElement {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.animate {
+  opacity: 1;
+  background-color: aqua;
+}
