@@ -1,11 +1,28 @@
-body{
-     overflow-x: hidden;
-    direction: rtl;
-    padding: 0%;
-    width: 100%;
-    margin: 0%;
-}
+/**
+ * type of gradien
+ *
+ * @format
+ */
 
+/*
+ background: conic-gradient(from 180deg at 50% 50%, #ffd700, #c0c0c0); 
+background: url("gradient.png");
+background: repeating-radial-gradient(circle, #ffd700, #c0c0c0 50%);
+background: repeating-linear-gradient(to right, #ffd700, #ffd700 10%, #c0c0c0 10%, #c0c0c0 20%);
+background: radial-gradient(circle, #ffd700, #c0c0c0);
+
+*/
+
+body {
+	overflow-x: hidden;
+	direction: rtl;
+	padding: 0%;
+	width: 100%;
+	margin: 0%;
+}
+.root {
+background: radial-gradient(circle, rgba(248, 216, 37, 0.1), rgba(232, 224, 139, 0.8), rgba(246, 222, 88, 0.6), rgba(239, 227, 99, 0.4));
+}
 
 ::-webkit-scrollbar {
 	width: 7px;
@@ -28,4 +45,3 @@ body{
 ::-webkit-scrollbar-thumb:hover {
 	background: gold;
 }
-

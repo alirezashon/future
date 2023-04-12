@@ -1,7 +1,7 @@
 /** @format */
 
-import Story from '../components/Story'
-import Post from '../components/Post'
+import Story from '@/components/Story'
+import PostBox from '@/components/PostBox'
 import Carousel from '@/components/Carosoul'
 import Search from '@/components/Search'
 const index = () => {
@@ -9,7 +9,7 @@ const index = () => {
 		<>
 			<Carousel />
 			<Story />
-			<Post />
+			<PostBox />
 			<Search/>
 		</>
 	)
