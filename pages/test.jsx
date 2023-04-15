@@ -84,71 +84,325 @@
 
 // export default MyComponent
 
-import styles from '@/styles/test.module.css'
-import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
+// import React, { Component } from 'react';
+// import ReactDOM from 'react-dom';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from 'react-responsive-carousel';
 
-const Carousel = () => {
-	const images = [{ src: '/1.jpeg' }, { src: '/2.jpg' }, { src: '/3.jpg' }]
-	const [currentIndex, setCurrentIndex] = useState(0)
+// class DemoCarousel extends Component {
+//     render() {
+//         return (
+//             <Carousel>
+//                 <div>
+//                     <img src="/1.jpeg" />
+//                     <p className="legend">Legend 1</p>
+//                 </div>
+//                 <div>
+//                     <img src="/me.jpg" />
+//                     <p className="legend">Legend 2</p>
+//                 </div>
+//                 <div>
+//                     <img src="ali.jpeg" />
+//                     <p className="legend">Legend 3</p>
+//                 </div>
+//             </Carousel>
+//         );
+//     }
+// }
+// export default DemoCarousel
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentIndex((currentIndex + 1) % images.length)
-		}, 4000)
-		return () => clearInterval(interval)
-	}, [currentIndex, images.length])
+// import { useState } from 'react';
 
-	const handleImageClick = (index) => {
-		setCurrentIndex(index)
-	}
+// const provinces = [
+//   {
+//     "id": 1,
+//     "name": "آذربایجان شرقی",
+//     "slug": "آذربایجان-شرقی"
+//   },
+//   {
+//     "id": 2,
+//     "name": "آذربایجان غربی",
+//     "slug": "آذربایجان-غربی"
+//   },
+// ];
 
-	return (
-		<div style={{ position: 'relative', marginTop: '-19vh' }}>
-			<Image
-				src='/588.jpg'
-				alt='My Image'
-				width={1700}
-				height={600}
-			/>
-			<div
-				style={{
-					position: 'absolute',
-					top: '54.3%',
-					left: '50%',
-					transform: 'translate(-50%, -50%)',
-					padding: '0.1rem',
-					borderRadius: '0.5rem',
-					color: 'white',
-				}}>
-				<div className={styles.carousel}>
-					<div className={styles.imageWrapper}>
-						{images.map((image, index) => (
-							<img
-								key={index}
-								src={image.src}
-								alt={`Image ${index + 1}`}
-								className={`${styles.image} ${
-									index === currentIndex ? styles.active : ''
-								}`}
-								onClick={() => handleImageClick(index)}
-							/>
-						))}
-						<div className={styles.circleWrapper}>
-							{images.map((image, index) => (
+// const cities = [
+//   {
+//     "id": 1,
+//     "name": "اسکو",
+//     "slug": "اسکو",
+//     "province_id": 1
+//   },
+//   {
+//     "id": 2,
+//     "name": "اهر",
+//     "slug": "اهر",
+//     "province_id": 1
+//   },
+//   {
+//     "id": 84,
+//     "name": "شوط",
+//     "slug": "شوط",
+//     "province_id": 2
+//   },
+//   {
+//     "id": 85,
+//     "name": "فیرورق",
+//     "slug": "فیرورق",
+//     "province_id": 2
+//   },
+// ];
+
+// export default function CascadingSelectBox() {
+//   const [selectedProvince, setSelectedProvince] = useState(null);
+//   const [selectedCity, setSelectedCity] = useState(null);
+
+//   const handleProvinceChange = (event) => {
+//     const provinceId = event.target.value;
+//     setSelectedProvince(provinceId);
+
+//     // Filter the cities based on the selected province
+//     const filteredCities = cities.filter(city => city.province_id === parseInt(provinceId));
+
+//     // If the selected province has cities, set the first city as the selected city
+//     if (filteredCities.length > 0) {
+//       setSelectedCity(filteredCities[0].id);
+//     } else {
+//       setSelectedCity(null);
+//     }
+//   };
+
+//   const handleCityChange = (event) => {
+//     const cityId = event.target.value;
+//     setSelectedCity(cityId);
+//   };
+
+//   return (
+//     <div>
+//       <label htmlFor="province">استان:</label>
+//       <select id="province" name="province" onChange={handleProvinceChange}>
+//         <option value="">انتخاب کنید</option>
+//         {provinces.map(province => (
+//           <option key={province.id} value={province.id}>{province.name}</option>
+//         ))}
+//       </select>
+
+//       <label htmlFor="city">شهر:</label>
+//       <select id="city" name="city" onChange={handleCityChange} disabled={!selectedProvince}>
+//         <option value="">انتخاب کنید</option>
+//         {cities
+//           .filter(city => city.province_id === parseInt(selectedProvince))
+//           .map(city => (
+//             <option key={city.id} value={city.id}>{city.name}</option>
+//           ))
+//         }
+//       </select>
+
+//       <p>استان انتخاب شده: {selectedProvince ? provinces.find(province => province.id === parseInt(selectedProvince)).name : 'هیچ'}</p>
+//       <p>شهر انتخاب شده: {selectedCity ? cities.find(city => city.id === parseInt(selectedCity)).name : 'هیچ'}</p>
+//     </div>
+//   );
+// }
+
+// import { ToastContainer, toast } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
+
+// export default function App() {
+// 	const notify = () => toast('Wow so easy!')
+
+// 	return (
+// 		<div>
+// 			<button onClick={notify}>Notify!</button>
+// 			<ToastContainer />
+// 		</div>
+// 	)
+// }
+
+// import React, { useState } from "react";
+// import styles from "@/styles/test.module.css";
+
+// const SpeedDial = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const toggleOpen = () => {
+//     setIsOpen(!isOpen);
+//   };
+
+//   return (
+// 		<div className={styles.menu}>
+// 			<div className={styles.container}>
+// 				<button
+// 					className={styles.mainButton}
+// 					onClick={toggleOpen}>
+// 					+
+// 				</button>
+// 				{isOpen && (
+// 					<div className={styles.itemsContainer}>
+// 						<div className={styles.item}>
+// 							<a className={styles.options} href='#'>1</a>
+// 						</div>
+// 						<div className={styles.item}>
+// 							<a className={styles.options} href='#'>2</a>
+// 						</div>
+// 						<div className={styles.item}>
+// 							<a className={styles.options} href='#'>3</a>
+// 						</div>
+// 						<div className={styles.item}>
+// 							<a className={styles.options} href='#'>4</a>
+// 						</div>
+// 						<div className={styles.item}>
+// 							<a className={styles.options} href='#'>5</a>
+// 						</div>
+// 					</div>
+// 				)}
+// 			</div>
+// 		</div>
+// 	)
+// };
+
+// export default SpeedDial;
+
+// import React from 'react'
+// import styles from '@/styles/test.module.css'
+
+// export default function GoldBox() {
+// 	const [currentPost, setCurrentPost] = React.useState(0)
+// 	const posts = [
+// 		{ index: 1, name: 'ali', imgSrc: '/me.jpg' },
+// 		{ index: 2, name: 'alireza', imgSrc: '/me.jpg' },
+// 		{ index: 3, name: 'alxi', imgSrc: '/me.jpg' },
+// 		{ index: 1, name: 'alsai', imgSrc: '/me.jpg' },
+// 		{ index: 2, name: 'alasdi', imgSrc: '/me.jpg' },
+// 		{ index: 3, name: 'aliwe', imgSrc: '/me.jpg' },
+// 		{ index: 1, name: 'alic', imgSrc: '/me.jpg' },
+// 		{ index: 2, name: 'aliad', imgSrc: '/me.jpg' },
+// 		{ index: 3, name: 'ali', imgSrc: '/me.jpg' },
+// 	]
+// 	const handleNext = () => {
+// 		setCurrentPost((currentPost + 1) % posts.length)
+// 	}
+
+// 	const handlePrev = () => {
+// 		setCurrentPost((currentPost - 1 + posts.length) % posts.length)
+// 	}
+
+// 	return (
+// 		<div className={styles.box}>
+// 			<div className={styles.postContainer}>
+// 				{posts.map((post, index) => (
+// 					<div
+// 						key={index}
+// 						className={`${styles.post} ${
+// 							index === currentPost ? styles.current : ''
+// 						}`}
+// 						onClick={() => {
+// 							setCurrentPost(index)
+// 						}}>
+// 						<img
+// 							src={post.imgSrc}
+// 							alt={post.name}
+// 						/>
+// 						<div className={styles.postDetails}>
+// 							<div className={styles.postName}>{post.name}</div>
+// 							<div className={styles.postPrice}>{post.price}</div>
+// 						</div>
+// 					</div>
+// 				))}
+// 			</div>
+// 			<button
+// 				className={styles.prevButton}
+// 				onClick={handlePrev}>
+// 				&lt;
+// 			</button>
+// 			<button
+// 				className={styles.nextButton}
+// 				onClick={handleNext}>
+// 				&gt;
+// 			</button>
+// 		</div>
+// 	)
+// }
+
+import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { addToCart, removeFromCart } from '../redux/cart/action'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+
+const PostBox = () => {
+
+	
+	const ProductPage = () => {
+		const [quantity, setQuantity] = useState(1)
+		const dispatch = useDispatch()
+	
+		const handleAddToCart = () => {
+			dispatch(removeFromCart(product.id))
+			dispatch(addToCart(product, quantity))
+			toast.success('محصول به سبد خرید اضافه شد')
+		}
+
+		const incrementCount = (postId) => {
+			if (selectedPostId === postId) {
+				setCount(count + 1)
+			} else {
+				setCount(1)
+				setSelectedPostId(postId)
+			}
+		}
+
+		const decrementCount = (postId) => {
+			if (count === 1) {
+				setSelectedPostId(null)
+			} else {
+				setCount(count - 1)
+				setSelectedPostId(postId)
+			}
+		}
+
+		return (
+			<div className={styles.container}>
+				{posts.map((post) => (
+					<div
+						key={post.id}
+						className={styles.card}>
+						<img
+							src={post.photo}
+							alt={post.title}
+							className={styles.photo}
+						/>
+						<div className={styles.content}>
+							<h3 className={styles.title}>{post.title}</h3>
+							<p className={styles.description}>{post.description}</p>
+							<div className={styles.basketContainer}>
 								<div
-									key={index}
-									className={`${styles.circle} ${
-										index === currentIndex ? styles.active : ''
-									}`}
-									onClick={() => handleImageClick(index)}
-								/>
-							))}
+									className={styles.basketButton}
+									onClick={() => incrementCount(post.id)}>
+									{selectedPostId === post.id ? (
+										<>
+											<button
+												className={styles.decrementButton}
+												onClick={() => decrementCount(post.id)}>
+												-
+											</button>
+											<div className={styles.count}>{count}</div>
+											<button
+												className={styles.incrementButton}
+												onClick={() => incrementCount(post.id)}>
+												+
+											</button>
+										</>
+									) : (
+										<AiOutlineShoppingCart />
+									)}
+								</div>
+							</div>
+							<button className={styles.price}>{`${post.price}`}</button>
 						</div>
 					</div>
-				</div>
+				))}
 			</div>
-		</div>
-	)
+		)
+	}
 }
-export default Carousel
+export default PostBox

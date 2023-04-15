@@ -1,12 +1,17 @@
 /** @format */
 
 import Navigation from '../../components/Navigation'
+import Footer from '../../components/Footer'
+import DialSpeed from '../../components/Navigation/DialSpeed'
+
 const index = ({ children }) => {
 	return (
 		<>
-			<div style={{height:'500vh'}}>
+			<div>
 				<Navigation />
-				<main style={{marginTop:222}}>{children}</main>
+				<DialSpeed/>
+				<main >{children}</main>
+				<Footer />
 			</div>
 		</>
 	)

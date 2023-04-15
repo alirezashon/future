@@ -1,3 +1,5 @@
+/** @format */
+
 .container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -8,9 +10,10 @@
 	position: relative;
 	border-radius: 8px;
 	overflow: hidden;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	transition: transform 0.2s ease-in-out;
+	border: ridge #dfd688 11px;
 	cursor: pointer;
+	box-shadow: 0px -7px 22px 7px #a2a261 inset, 1px 1px 11px 1px #fbfbf9;
 }
 
 .card:hover {
@@ -34,27 +37,86 @@
 .description {
 	margin-bottom: 0.5rem;
 }
-
-.actions {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.message-box {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	z-index: 9999;
+	transition: all 0.3s ease-in-out;
 }
 
-.button {
+.message-box.show {
+	transform: translateX(0);
+}
+
+.message-box.hide {
+	transform: translateX(100%);
+}
+
+.basketContainer {
+	position: relative;
+	padding: 2vh;
+}
+
+.basketButton {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 32px;
-	height: 32px;
-	border: none;
+	width: 50px;
+	height: 50px;
 	border-radius: 50%;
-	background-color: gold;
-	color: white;
-	font-size: 1rem;
+	background-color: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	cursor: pointer;
+	transition: all 0.2s ease;
 }
 
+.basketButton:hover {
+	transform: scale(1.05);
+}
+
+.basketButton svg {
+	font-size: 24px;
+	color: #666;
+}
+
+.count {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+	margin: 0 8px;
+}
+
+.incrementButton,
+.decrementButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 50%;
+	background-color: #666;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	margin: 0 8px;
+}
+
+.incrementButton:hover,
+.decrementButton:hover {
+	background-color: #555;
+}
 
 .price {
 	display: flex;
@@ -63,8 +125,9 @@
 	padding: 0.5rem 1rem;
 	border: none;
 	border-radius: 8px;
-	background-color: gold;
-	color: black;
+	background-color: #bcb134;
+	color: #fff;
+	border: ridge 2px #fffef7;
 	font-size: 1.2rem;
 	font-weight: bold;
 	text-align: center;

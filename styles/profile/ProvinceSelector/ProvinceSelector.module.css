@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+}
+
+.label {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.select {
+    padding: 0.5rem;
+    border: 1px solid #b3a678;
+    border-radius: 0.5rem;
+    background-color: #fff9e6;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #ffc107;
+}
+
+.select:disabled {
+    opacity: 0.5;
+}
+
+.selected {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #b3a678;
+}

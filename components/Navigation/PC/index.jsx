@@ -3,23 +3,27 @@ import React from 'react'
 import Link from 'next/link'
 import styles from '../../../styles/components/Navigation/pc.module.css'
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 const Menu = () => {
 	const items = [
-		{ label: 'Rings', link: '/rings' },
-		{ label: 'Earrings', link: '/earrings' },
-		{ label: 'Necklaces', link: '/necklaces' },
-		{ label: 'Bracelets', link: '/bracelets' },
-		{ label: 'Watches', link: '/watches' },
+		{ label: 'محصولات', link: '/products' },
+		{ label: 'سفارشی سازی', link: '/Customization' },
+		{ label: 'هدیه', link: '/present' },
+		{ label: 'تماس با ما', link: '/contact-us' },
+		{ label: 'درباره ما', link: '/about-us' },
 	]
 	const dropdownItems = [
-		{ label: 'Rings', link: '/rings' },
-		{ label: 'Earrings', link: '/earrings' },
-		{ label: 'Necklaces', link: '/necklaces' },
-		{ label: 'Bracelets', link: '/bracelets' },
-		{ label: 'Watches', link: '/watches' },
+		{ label: 'گوشواره', link: '/rings' },
+		{ label: 'دستبند', link: '/earrings' },
+		{ label: 'گردنبند', link: '/necklaces' },
+		{ label: 'انگشتر', link: '/bracelets' },
+		{ label: 'پابند', link: '/watches' },
 	]
+	 const [isChecked, setIsChecked] = useState(false)
+
+		const handleSwitch = () => {
+			setIsChecked(!isChecked)
+		}
 	const [isOpen, setIsOpen] = useState(false)
 
 	const handleToggle = () => {
@@ -37,7 +41,7 @@ const Menu = () => {
 		const handleScroll = () => {
 			const currentScrollPos = window.pageYOffset
 
-			if (prevScrollPos > currentScrollPos) {
+			if (prevScrollPos > currentScrollPos-10) {
 				setShowDiv(true)
 			} else {
 				setShowDiv(false)
@@ -53,31 +57,6 @@ const Menu = () => {
 
 	return (
 		<>
-			<header className={styles.header}>
-				<div className={styles.leftContainer}>
-					<Image
-						width={111}
-						height={77}
-						className={styles.logo}
-						src='/me.jpg'
-						alt='Logo'
-					/>
-				</div>
-				<div className={styles.rightContainer}>
-					<form className={styles.searchContainer}>
-						<input
-							className={styles.searchInput}
-							type='text'
-							placeholder='Search...'
-						/>
-						<button
-							className={styles.searchButton}
-							type='submit'>
-							search
-						</button>
-					</form>
-				</div>
-			</header>
 			<div
 				className={`${styles.scrollingDiv} ${
 					showDiv ? styles.show : styles.hide
@@ -96,7 +75,7 @@ const Menu = () => {
 						<button
 							className={styles.toggleButton}
 							onMouseEnter={handleToggle}>
-							Toggle
+							نوع محصول
 						</button>
 						{isOpen && (
 							<div
@@ -113,6 +92,17 @@ const Menu = () => {
 							</div>
 						)}
 					</div>
+				</div>
+				<div className={styles.switchWrapper}>
+					<label className={styles.label}>نقره</label>
+
+					<input
+						type='checkbox'
+						className={styles.switch}
+						checked={isChecked}
+						onChange={handleSwitch}
+					/>
+					<label className={styles.label}>طلا</label>
 				</div>
 			</div>
 		</>

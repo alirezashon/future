@@ -1,0 +1,46 @@
+.carousel {
+  width: 100%;
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.image {
+  width: 130%;
+  height: 34.4vh;
+  opacity: 0;
+  border-radius: 12.5vh 0vh 12.3vh 0vh;
+}
+
+.image.active {
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -53.3%) scale(1.5);
+}
+
+.circleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease-in
+}

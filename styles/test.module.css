@@ -1,45 +1,84 @@
-.carousel {
-  width: 100%;
-  position: relative;
-}
+/**
+ * .box {
+ *   display: flex;
+ *   flex-direction: row;
+ *   justify-content: center;
+ *   align-items: center;
+ *   height: 30vh;
+ *   width: 100%;
+ *   background-color: gold;
+ *   overflow-x: scroll;
+ *   overflow-y: hidden;
+ * }
+ * 
+ * .postContainer {
+ *   display: flex;
+ *   flex-direction: row;
+ *   height: 100%;
+ * }
+ * 
+ * .post {
+ *   display: flex;
+ *   flex-direction: column;
+ *   justify-content: center;
+ *   align-items: center;
+ *   width: 300px;
+ *   height: 80%;
+ *   margin: 0 10px;
+ *   cursor: pointer;
+ *   transition: all 0.3s ease-in-out;
+ * }
+ * 
+ * .post:hover {
+ *   transform: scale(1.05);
+ * }
+ * 
+ * .current {
+ *   transform: scale(1.05);
+ * }
+ * 
+ * .post img {
+ *   height: 70%;
+ *   margin-bottom: 10px;
+ * }
+ * 
+ * .postDetails {
+ *   display: flex;
+ *   flex-direction: column;
+ *   justify-content: center;
+ *   align-items: center;
+ * }
+ * 
+ * .postName {
+ *   font-weight: bold;
+ *   font-size: 1.2rem;
+ * }
+ * 
+ * .postPrice {
+ *   font-size: 1rem;
+ * }
+ * 
+ * .prevButton,
+ * .nextButton {
+ *   position: absolute;
+ *   top: 50%;
+ *   transform: translateY(-50%);
+ *   font-size: 2rem;
+ *   border: none;
+ *   background-color: transparent;
+ *   cursor: pointer;
+ * }
+ * 
+ * .prevButton {
+ *   left: 0;
+ * }
+ * 
+ * .nextButton {
+ *   right: 0;
+ * }
+ *
+ * @format
+ */
 
-.imageWrapper {
-  position: relative;
-}
 
-.image {
-  width: 100%;
-  height: 40vh;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
 
-.image.active {
-  opacity: 1;
-  z-index: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.2);
-}
-
-.circleWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 50%;
-}
-
-.circle {
-  width: 10px;
-  height: 10px;
-  margin: 0 10px;
-  border-radius: 50%;
-  background-color: #ccc;
-  cursor: pointer;
-  transition: all 0.3s ease-in}
