@@ -1,0 +1,248 @@
+/** @format */
+@keyframes postBox {
+  25% {
+    border-radius: 10vh 0vh 0vh 0vh;
+  }
+  50% {
+    border-radius: 0vh 10vh 0vh 0vh;
+  }
+  75% {
+    border-radius: 0vh 0vh 10vh 0vh;
+  }
+  75% {
+    border-radius: 0vh 0vh 0vh 10vh;
+  }
+}
+@keyframes iconHover {
+  15% {
+    transform: scale(1.02) rotate(20deg);
+  }
+  35% {
+    transform: scale(1.1) rotate(190deg);
+  }
+  65% {
+    transform: scale(1.1) rotate(190deg);
+  }
+  95% {
+    transform: scale(1.1) rotate(190deg);
+  }
+}
+.postsBox {
+  width: 98vw;
+  animation: postBox infinite 11s;
+  margin: 1vh;
+  border: double 0.5vh rgba(12, 179, 212, 0.8);
+  background: repeating-radial-gradient(
+    rgba(231, 246, 231, 0.9),
+    rgb(247, 248, 248)
+  );
+  box-shadow: 1px 1px 7px 2px rgba(248, 242, 190, 0.8),
+    1px 1px 22px 2px rgba(255, 255, 255, 0.8) inset;
+}
+.innerPostsBox {
+  width: 98.5%;
+  animation: postBox infinite 11s;
+  border: dashed 0.4vh rgba(182, 161, 4, 0.7);
+  background: radial-gradient(
+    rgba(173, 242, 242, 0.77),
+    rgba(128, 252, 252, 0.77),
+    rgba(82, 156, 156, 0.77),
+    rgba(243, 252, 252, 0.77)
+  );
+  padding: 1vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(23vw, 0fr));
+  gap: 1vh;
+  justify-content: center;
+}
+.postBox {
+  height: 44vh;
+  margin: 1vh;
+  cursor: pointer;
+  padding: 1vh;
+  border: double 0.4vh rgba(234, 229, 240, 0.8);
+  border-radius: 0.4vh;
+  box-shadow: 1px 1px 4px 1px rgba(1, 114, 236, 0.8),
+    1px 1px 4px 2px rgba(253, 251, 255, 0.7) inset;
+}
+.innerPostBox {
+  width: 99%;
+  height: 99%;
+  background: radial-gradient(rgba(230, 255, 255, 0.62), rgb(232, 243, 253));
+  box-shadow: 1px 1px 14px 1px rgba(208, 235, 249, 0.8),
+    1px 1px 4px 2px rgba(240, 254, 254, 0.7) inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imageBox {
+  width: 94%;
+  height: 76%;
+}
+.image {
+  width: 99%;
+  height: 97%;
+  border-radius: 0.7vh;
+  border: ridge 0.4vh rgba(231, 255, 254, 0.8);
+  box-shadow: 1px 1px 4px 1px rgba(37, 163, 216, 0.8),
+    1px 1px 7px 11px rgba(252, 176, 1, 0.651) inset;
+  z-index: 2;
+}
+.image:hover {
+  transform: scale(1.05);
+}
+.title {
+  margin-top: -.7vw;
+  position: absolute;
+  background: radial-gradient(rgba(235, 255, 255, 0.62), rgb(235, 245, 255));
+  color: rgb(1, 28, 52);
+  text-align: center;
+  padding: 2vh 1vw;
+  border: double 0.5vh rgb(159, 202, 245);
+border-radius: 0 0 4vh 4vh;
+}
+
+.title:hover {
+  transform: scale(1.05);
+}
+.priceBasketBox {
+  height: 20%;
+  width: 96%;
+  padding: 0.7vh;
+  border: ridge 0.2vh rgba(121, 1, 241, 0.8);
+  background: radial-gradient(rgba(73, 243, 243, 0.62), rgb(246, 248, 251));
+}
+.innerPriceBasketBox {
+  height: 77%;
+  padding: 0.4vh 0.7vh;
+  border-radius: 0.5vh;
+  border: ridge 0.4vh rgba(6, 46, 138, 0.8);
+  background: radial-gradient(rgba(8, 143, 143, 0.62), rgb(1, 25, 49));
+  box-shadow: 1px 1px 7px 1px rgba(214, 243, 255, 0.8),
+    1px 1px 7px 4px rgba(204, 248, 254, 0.651) inset;
+  display: flex;
+  align-items: center;
+}
+.priceBasket {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(rgba(1, 93, 241, 0.8), rgba(137, 221, 203, 0.8));
+  border: ridge 0.4vh rgba(199, 245, 243, 0.8);
+  padding: 0vh 0vh 0vh 0vh;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 3vh;
+}
+.price {
+  padding: .4vh 1vh;
+  border-radius: 2vh;
+  background: radial-gradient(rgba(1, 93, 241, 0.8), rgba(137, 221, 203, 0.8));
+  border: dashed 0.3vh rgba(82, 156, 156, 0.77);
+  margin: 0.1vh 0.2vh;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: double 0.5vh rgba(123, 177, 235, 0.8);
+  background: radial-gradient(rgba(1, 114, 236, 0.8), rgba(22, 19, 113, 0.9));
+  border-radius: 55vh;
+}
+.icon:hover {
+  animation: iconHover;
+}
+
+/* Styling for the container */
+.addPriceBasketBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #ff7f00, #f94e03);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Styling for the price element */
+.addProductBasketPrice {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Styling for the quantity adjustment section */
+.addProductBasketicon {
+  display: flex;
+  align-items: center;
+}
+
+.addProductBasketicon button {
+  background: #ff7f00;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.addProductBasketicon button:hover {
+  background: #f94e03;
+  transform: scale(1.1);
+}
+
+/* Styling for the count element and cart icon */
+.addProductBasketicon span {
+  font-size: 24px;
+  color: #fff;
+  margin: 0 10px;
+}
+
+.addProductBasketicon .AiOutlineShoppingCart {
+  font-size: 36px;
+  color: #fff;
+}
+
+/* Animation for the initial display */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 777px) {
+  .innerPostsBox {
+    width: 96vw;
+    animation: postBox infinite 11s;
+    border: dashed 0.2vw rgba(182, 161, 4, 0.7);
+    background: radial-gradient(
+      rgba(173, 242, 242, 0.77),
+      rgba(128, 252, 252, 0.77),
+      rgba(82, 156, 156, 0.77),
+      rgba(243, 252, 252, 0.77)
+    );
+    padding: 0.5vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40vw, 4fr));
+  }
+  .postBox {
+    cursor: pointer;
+    padding: 1vh;
+    border: double 0.4vh rgba(234, 229, 240, 0.8);
+    border-radius: 0.4vh;
+    box-shadow: 1px 1px 4px 1px rgba(1, 114, 236, 0.8),
+      1px 1px 4px 2px rgba(206, 166, 245, 0.7) inset;
+  }
+  .title {
+	margin-top: -1vw;
+}
+}
